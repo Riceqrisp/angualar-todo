@@ -1,0 +1,26 @@
+<img class="logo" width="300" alt="Some logo"src="https://stadt-bremerhaven.de/wp-content/uploads/2018/08/microsoft-to-do-logo.jpg">
+
+<input type="text" class="todo-input" placeholder="What needs to be done?" [(ngModel)] ="todoTitle" (keyup.enter)="addTodo()">
+
+<div class="todo-item" *ngFor="let todo of todos">
+    <div class="todo-item-left">
+      <input type="checkbox" [(ngModel)]="todo.completed">
+      <div *ngIf="!todo.editing; else editingTodo" class="todo-item-label" (dblclick)="editTodo(todo)">{{ todo.title }}</div>
+      <ng-template #editingTodo>
+        <input type="text" class="todo-item-edit" [(ngModel)]="todo.title" (keyup.enter)="doneEdit(todo)" (keyup.esc)="cancelEdit(todo)"autofocus>
+      </ng-template>
+    </div>
+    <div class="remove-item" (click)="deleteTodo(todo.id)">
+      &times;
+    </div>
+  </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.9.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.9.0/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
