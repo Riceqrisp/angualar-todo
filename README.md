@@ -1,6 +1,6 @@
 # TodoAngular
 
-This project was written for learning purposes and followed (https://www.youtube.com/watch?v=nbFmHD4T04k) guidelines.
+This project was written for learning purposes and followed this tutorial's https://www.youtube.com/watch?v=nbFmHD4T04k guidelines.
 
 ## Development server
 
